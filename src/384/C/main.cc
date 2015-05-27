@@ -38,6 +38,20 @@ public:
 		return total;
 	}
 
+	void update(ll n, ll value) {
+		for (tree[n += M] = value, n >>= 1; n; n >>= 1) 
+			tree[n] = tree[n << 1] + tree[(n << 1) + 1];
+	}
+
+	void show() {
+		ll i = 1;
+		for (ll h = 1; (1 << h) < tree.size(); h++) {
+			for (; i < (1 << h); i++) {
+				std::cout << " " << tree[i];
+			}
+			std::cout << std::endl;
+		}
+	}
 
 private:
 	ll M;
@@ -54,6 +68,8 @@ int main(int argc, char *argv[])
 	ll n, total = 0;
 	std::cin >> n;
 	a.resize(n + 1);
+
+
 	for (ll i = 1; i <= n; i++) {
 		std::cin >> a[i];
 	}
@@ -67,6 +83,7 @@ int main(int argc, char *argv[])
 	}
 
 	std::cout << total << std::endl;
+
 
 	return 0;
 }
