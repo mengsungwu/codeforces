@@ -1,3 +1,4 @@
+# for visual studio 
 vcproject/
 Debug/
 *.opensdf
@@ -6,3 +7,7 @@ Debug/
 *.v12.suo
 *.vcxproj
 *.vcxproj.filters
+
+# for executable
+a.out
+*.exe
